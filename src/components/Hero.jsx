@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import Viewer from './Viewer.jsx'
 
+const TICKER_WORDS = ['Upper', 'Midsole', 'Outsole', 'Tongue', 'Heel counter', 'Lace', 'Eyelet']
+
 export default function Hero() {
   return (
     <section id="top" className="hero">
@@ -11,7 +13,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="eyebrow">Model 01 — &quot;Vector&quot;</span>
+          <span className="eyebrow">Model 01, Vector</span>
           <h1 className="headline hero__headline">
             Built on
             <br />
@@ -20,9 +22,9 @@ export default function Hero() {
             <span className="hero__headline-accent">Tested on the road.</span>
           </h1>
           <p className="hero__sub">
-            Every OUTSOLE begins as a wooden last, shaped to the exact geometry of a
-            stride in motion. Model 01 keeps that discipline — four millimetres of
-            drop, zero grams wasted.
+            Every OUTSOLE begins as a wooden last, shaped to the exact geometry of
+            a stride in motion. Model 01 keeps that discipline: four millimetres
+            of drop, zero grams wasted.
           </p>
           <div className="hero__actions">
             <a href="#waitlist" className="btn btn--solid">
@@ -40,27 +42,20 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
-          <Viewer interactive autoSpin={false} cameraPosition={[3.2, 1.3, 3.4]} />
-
-          <svg className="hero__blueprint" viewBox="0 0 100 100" aria-hidden="true">
-            <line x1="8" y1="88" x2="92" y2="88" />
-            <line x1="8" y1="85" x2="8" y2="91" />
-            <line x1="92" y1="85" x2="92" y2="91" />
-            <text x="50" y="96" textAnchor="middle">
-              312 MM
-            </text>
-          </svg>
-
-          <span className="hero__drag-hint">Drag to rotate</span>
+          <div className="hero__glow" aria-hidden="true" />
+          <Viewer autoSpin cameraPosition={[3.2, 1.3, 3.4]} />
         </motion.div>
       </div>
 
       <div className="hero__marquee" aria-hidden="true">
         <div className="hero__marquee-track">
           {Array.from({ length: 2 }).map((_, i) => (
-            <span key={i}>
-              UPPER — MIDSOLE — OUTSOLE — TONGUE — HEEL COUNTER — LACE — EYELET —
-              UPPER — MIDSOLE — OUTSOLE — TONGUE — HEEL COUNTER — LACE — EYELET —
+            <span key={i} className="hero__marquee-set">
+              {TICKER_WORDS.map((word) => (
+                <span key={word} className="hero__marquee-word">
+                  {word}
+                </span>
+              ))}
             </span>
           ))}
         </div>
