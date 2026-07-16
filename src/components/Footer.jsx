@@ -5,7 +5,7 @@ export default function Footer() {
         <span className="nav__mark">
           OUTSOLE<span className="nav__mark-dot">.</span>
         </span>
-        <span className="footer__meta">Model 01 &quot;Vector&quot; — designed on the last</span>
+        <span className="footer__meta">Model 01 Vector, designed on the last</span>
         <div className="footer__links">
           <a href="#top">Back to top</a>
         </div>
