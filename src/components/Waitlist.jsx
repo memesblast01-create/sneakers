@@ -13,7 +13,7 @@ export default function Waitlist() {
   return (
     <section className="waitlist" id="waitlist">
       <div className="wrap waitlist__inner">
-        <span className="eyebrow">Release — early access</span>
+        <span className="eyebrow">Early access</span>
         <h2 className="headline waitlist__headline">
           Model 01 lands
           <br />
