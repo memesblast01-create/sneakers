@@ -1,11 +1,10 @@
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { ContactShadows, OrbitControls } from '@react-three/drei'
+import { ContactShadows } from '@react-three/drei'
 import { ACESFilmicToneMapping } from 'three'
 import SneakerModel from './SneakerModel.jsx'
 
 export default function Viewer({
-  interactive = false,
   targetRotationY = 0,
   autoSpin = false,
   tint = '#ffffff',
@@ -31,9 +30,10 @@ export default function Viewer({
           castShadow
           shadow-mapSize={[1024, 1024]}
         />
-        <directionalLight position={[-4, 2, -3]} intensity={0.9} color="#3a5a80" />
+        {/* Cool rim light from behind-left: separates a dark shoe from a dark background */}
+        <directionalLight position={[-5, 3, -4]} intensity={2.1} color="#7d9cc2" />
         <directionalLight position={[0, -2, 4]} intensity={0.5} color="#ff5a1f" />
-        <pointLight position={[0, 3, -4]} intensity={0.8} />
+        <pointLight position={[0, 3, -4]} intensity={1} />
         <hemisphereLight args={['#f5f3ee', '#15161a', 0.6]} />
 
         <Suspense fallback={null}>
@@ -51,17 +51,6 @@ export default function Viewer({
             far={2}
           />
         </Suspense>
-
-        {interactive && (
-          <OrbitControls
-            enablePan={false}
-            enableZoom={false}
-            minPolarAngle={Math.PI / 2.6}
-            maxPolarAngle={Math.PI / 1.9}
-            autoRotate={false}
-            rotateSpeed={0.6}
-          />
-        )}
       </Canvas>
     </div>
   )
