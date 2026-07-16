@@ -8,35 +8,35 @@ const PARTS = [
     label: 'Upper',
     rotation: 0.15,
     desc: 'Engineered knit, fused eyelets, zero-slip lockdown through the midfoot.',
-    spec: 'WEIGHT 38G · PANELS 3',
+    spec: 'WEIGHT 38G / PANELS 3',
   },
   {
     id: 'tongue',
     label: 'Tongue',
     rotation: 0.7,
     desc: 'Full gusset keeps trail debris out without adding bulk underfoot.',
-    spec: 'FOAM 4MM · GUSSET FULL',
+    spec: 'FOAM 4MM / GUSSET FULL',
   },
   {
     id: 'midsole',
     label: 'Midsole',
     rotation: 1.65,
     desc: 'Compression-molded EVA, tuned for a 4mm heel-to-toe drop.',
-    spec: 'DROP 4MM · DUROMETER 55C',
+    spec: 'DROP 4MM / DUROMETER 55C',
   },
   {
     id: 'outsole',
     label: 'Outsole',
     rotation: 2.5,
     desc: 'Carbon-rubber lugs at the high-wear zones only, foam everywhere else.',
-    spec: 'LUG DEPTH 3MM · RUBBER 68A',
+    spec: 'LUG DEPTH 3MM / RUBBER 68A',
   },
   {
     id: 'heel',
     label: 'Heel counter',
     rotation: 3.5,
     desc: 'Internal TPU counter locks the heel without any external bulk.',
-    spec: 'TPU 1.2MM · HEIGHT 62MM',
+    spec: 'TPU 1.2MM / HEIGHT 62MM',
   },
 ]
 
@@ -54,7 +54,7 @@ const MATERIALS = [
     label: 'Engineered mesh',
     where: 'Upper, forefoot',
     detail:
-      'A single-layer knit varies its density across the foot — open where the foot needs to breathe, tight where it needs to hold.',
+      'A single-layer knit varies its density across the foot: open where the foot needs to breathe, tight where it needs to hold.',
   },
   {
     label: 'Compression EVA',
@@ -88,7 +88,7 @@ export default function Studio() {
 
         <div className="studio__panels">
           <div className="studio__block">
-            <span className="eyebrow">01 — Anatomy</span>
+            <span className="eyebrow">01 Anatomy</span>
             <h2 className="headline studio__title">Take it apart.</h2>
             <ul className="parts">
               {PARTS.map((part, i) => (
@@ -118,7 +118,7 @@ export default function Studio() {
           </div>
 
           <div className="studio__block" id="colorways">
-            <span className="eyebrow">02 — Colorways</span>
+            <span className="eyebrow">02 Colorways</span>
             <h2 className="headline studio__title">Pick a finish.</h2>
             <div className="swatches">
               {COLORWAYS.map((c) => (
@@ -137,7 +137,7 @@ export default function Studio() {
           </div>
 
           <div className="studio__block" id="materials">
-            <span className="eyebrow">03 — Materials</span>
+            <span className="eyebrow">03 Materials</span>
             <h2 className="headline studio__title">What it's made of.</h2>
             <div className="materials">
               {MATERIALS.map((m) => (
