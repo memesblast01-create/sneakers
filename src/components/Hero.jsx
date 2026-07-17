@@ -13,7 +13,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="eyebrow">Model 01, Vector</span>
+          <span className="eyebrow eyebrow--live">
+            <span className="eyebrow__pulse" />
+            Launching soon
+          </span>
           <h1 className="headline hero__headline">
             Built on
             <br />
@@ -22,13 +25,13 @@ export default function Hero() {
             <span className="hero__headline-accent">Tested on the road.</span>
           </h1>
           <p className="hero__sub">
-            Every OUTSOLE begins as a wooden last, shaped to the exact geometry of
-            a stride in motion. Model 01 keeps that discipline: four millimetres
-            of drop, zero grams wasted.
+            OUTSOLE is a new footwear label opening with a single shoe. Model 01,
+            Vector: four millimetres of drop, zero grams wasted, and a build you
+            can actually take apart and understand.
           </p>
           <div className="hero__actions">
             <a href="#waitlist" className="btn btn--solid">
-              Join waitlist
+              Get early access
             </a>
             <a href="#anatomy" className="btn btn--line">
               Explore the build
@@ -43,7 +46,7 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
         >
           <div className="hero__glow" aria-hidden="true" />
-          <Viewer autoSpin cameraPosition={[3.2, 1.3, 3.4]} />
+          <Viewer interactive cameraPosition={[3.2, 1.3, 3.4]} />
         </motion.div>
       </div>
 
