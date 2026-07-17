@@ -39,7 +39,7 @@ export default function Waitlist() {
               aria-label="Email address"
             />
             <button type="submit" className="btn btn--solid">
-              Join waitlist
+              Get early access
             </button>
           </form>
         )}
