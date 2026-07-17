@@ -11,7 +11,7 @@ export default function Nav() {
           <a href="#materials">Materials</a>
         </nav>
         <a href="#waitlist" className="nav__cta">
-          Join waitlist
+          Get early access
         </a>
       </div>
     </header>
