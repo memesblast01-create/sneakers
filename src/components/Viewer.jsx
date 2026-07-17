@@ -1,10 +1,11 @@
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { ContactShadows } from '@react-three/drei'
+import { ContactShadows, OrbitControls } from '@react-three/drei'
 import { ACESFilmicToneMapping } from 'three'
 import SneakerModel from './SneakerModel.jsx'
 
 export default function Viewer({
+  interactive = false,
   targetRotationY = 0,
   autoSpin = false,
   tint = '#ffffff',
@@ -39,7 +40,7 @@ export default function Viewer({
         <Suspense fallback={null}>
           <SneakerModel
             targetRotationY={targetRotationY}
-            autoSpin={autoSpin}
+            autoSpin={autoSpin && !interactive}
             tint={tint}
             rotation={[0, 0.5, 0]}
           />
@@ -51,6 +52,18 @@ export default function Viewer({
             far={2}
           />
         </Suspense>
+
+        {interactive && (
+          <OrbitControls
+            enablePan={false}
+            enableZoom={false}
+            autoRotate
+            autoRotateSpeed={1.1}
+            rotateSpeed={0.7}
+            minPolarAngle={Math.PI / 2.8}
+            maxPolarAngle={Math.PI / 1.85}
+          />
+        )}
       </Canvas>
     </div>
   )
